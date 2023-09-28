@@ -2,13 +2,13 @@
 function getProductQuestionByIndex(index) {
     switch (index) {
         case 0:
-            return "Desea limpieza facial cuesta 100 (S/N)";
+            return "Desea una limpieza facial cuesta $1.000 (S/N)";
         case 1:
-            return "Desea masaje relajante cuesta 200 (S/N)";
+            return "Desea un masaje relajante cuesta $2.000 (S/N)";
         case 2:
-            return "Desea masaje relajante cuesta 250 (S/N)";
+            return "Desea una sesion de regalo de depilacion laser cuesta $2.500 (S/N)";
         case 3:
-            return "Desea masaje relajante cuesta 250 (S/N)";
+            return "Desea una seccion de radiofrecuencia facial cuesta $3.000 (S/N)";
 
     }
 }
@@ -16,19 +16,19 @@ function getProductQuestionByIndex(index) {
 function getProductValueByIndex(index) {
     switch (index) {
         case 0:
-            return 100;
+            return 1000;
         case 1:
-            return 200;
+            return 2000;
         case 2:
-            return 250;
+            return 2500;
         case 3:
-            return 350;
+            return 3000;
     }
 }
 
 //MAIN
 let nombre = prompt("Ingrese su nombre");
-alert(`Hola bienvenido ${nombre}`);
+alert(`Hola ${nombre} Bienvenido a Alma Estetica `);
 
 let valorTotal = 0;
 
@@ -36,7 +36,7 @@ for (let indexQuestion = 0; indexQuestion < 4; indexQuestion++) {
     let messageQuestionIndex = getProductQuestionByIndex(indexQuestion);
     let yesOrNo = prompt(messageQuestionIndex);
 
-    if (yesOrNo === "S") {
+    if (yesOrNo.toLowerCase() === "s") {
         let valor = getProductValueByIndex(indexQuestion)
         valorTotal = valorTotal + valor;
     }
